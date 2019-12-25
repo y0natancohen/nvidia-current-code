@@ -1,0 +1,5 @@
+/usr/bin/aarch64-linux-gnu-g++ -O2 -Wall -W -fPIC -D_REENTRANT -D_GNU_SOURCE -D_MAJOR_VERSION=2 -D_MINOR_VERSION=35 -D_BUILD_VERSION=0 -D_BUILD2_VERSION=2788 -pedantic -DMALLOC_TRACE -std=c++11   -DNDEBUG -fvisibility=hidden    -I/opt/mvIMPACT_Acquire/apps/..  -o CaptureToUserMemory CaptureToUserMemory.legacy.cpp -Wl,-unresolved-symbols=ignore-in-shared-libs -L/opt/mvIMPACT_Acquire/apps/../lib/arm64 -lmvDeviceManager -lmvPropHandling `pkg-config opencv --cflags --libs`    -lm -lpthread  -ldl
+
+
+
+/usr/bin/g++     -O2 -Wall -W -fPIC -D_REENTRANT -D_GNU_SOURCE -D_MAJOR_VERSION=2 -D_MINOR_VERSION=35 -D_BUILD_VERSION=0 -D_BUILD2_VERSION=2788 -pedantic -DMALLOC_TRACE -std=c++11  -DNDEBUG -fvisibility=hidden    -I/opt/mvIMPACT_Acquire/apps/..   -o CaptureToUserMemory CaptureToUserMemory.legacy.o   -Wl,-unresolved-symbols=ignore-in-shared-libs -L/opt/mvIMPACT_Acquire/apps/../lib/x86_64 -lmvDeviceManager -lmvPropHandling   `pkg-config opencv --cflags --libs`    -lm -lpthread  -ldl

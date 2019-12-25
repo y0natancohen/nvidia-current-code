@@ -1,0 +1,19 @@
+sudo ln -s /usr/local/include/opencv4 /usr/local/include/opencv
+edit ../Makefile.samp.inc put CPPFLAGS one before last argument to maintain static build order
+edit Makefile.inc add headers, libs paths and lib names in correct order
+#-------------------------------------------
+CPPFLAGS_1 = 				\
+	-pedantic				\
+	-DMALLOC_TRACE			\
+	-std=c++11		\
+	-I/usr/local/include -I/usr/local/include/opencv -L/usr/local/lib -L../../lib/arm64	\
+	-lopencv_highgui -lopencv_imgproc -lopencv_core \
+	-lstdc++ -lrt 
+
+#-------------------------------------------
+include $(ROOT_PATH)/Makefile.samp.inc
+#-------------------------------------------
+$(MODULE_NAME): $(OBJECTS) $(OOBJ) extract_ar_objects
+        $(CXX) -o $(BINARY_NAME) $(OBJECTS) $(OOBJ) $(LLOCLIB) $(LDFLAGS) $(USER_AR_OBJ_LIST) $(CPPFLAGS) -ldl $(PROFOPT)
+
+
